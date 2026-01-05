@@ -7,27 +7,6 @@ import { PROPERTYLISTINGSAMPLE } from "@/constants";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-// Sample reviews data
-const sampleReviews = [
-  {
-    name: "Sarah Johnson",
-    avatar: "/assets/avatar1.jpg",
-    rating: 5,
-    comment: "Absolutely stunning property! The ocean views were breathtaking and the amenities exceeded our expectations. Would definitely stay here again."
-  },
-  {
-    name: "Michael Chen",
-    avatar: "/assets/avatar2.jpg",
-    rating: 4.5,
-    comment: "Great location and beautiful property. The host was very responsive and helpful. Minor issue with the WiFi but overall a fantastic experience."
-  },
-  {
-    name: "Emily Rodriguez",
-    avatar: "/assets/avatar3.jpg",
-    rating: 5,
-    comment: "Perfect vacation spot! The villa was clean, spacious, and had everything we needed. The beach access was a huge plus for our family."
-  }
-];
 
 const PropertyDetailPage: React.FC = () => {
   const router = useRouter();
@@ -74,7 +53,7 @@ const PropertyDetailPage: React.FC = () => {
             <PropertyDetail property={property} />
             
             {/* Reviews Section */}
-            <ReviewSection reviews={sampleReviews} />
+            <ReviewSection propertyId={property.id} />
           </div>
 
           {/* Right Column - Booking Section (Sticky) */}
